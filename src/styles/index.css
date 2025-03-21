@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* Tailwind */
+@import "tailwindcss";
+
+/* Variables */
+@theme {
+    --font-main: Arial;
+}
+
+/* Base */
+html {
+    font-size: 100%; /* 1rem = 16px */
+}
+
+body {
+    font-family: var(--font-main), sans-serif;
+    @apply text-base font-normal break-words min-w-[375px]
+}
+
+a,
+input,
+button   {
+    @apply u-focus
+}
+
+/* Utilities */
+@utility u-focus {
+    @apply focus:outline-none focus:ring-2 focus:ring-sky-600;
+}
