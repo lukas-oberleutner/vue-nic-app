@@ -18,7 +18,9 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 // Emits
-const emit = defineEmits(['click']);
+const emit = defineEmits<{
+  (event: 'click', e: MouseEvent): void;
+}>();
 
 // Styles
 const computedClass = computed(() => {
@@ -32,7 +34,7 @@ const computedClass = computed(() => {
 });
 
 // Methods
-function handleClick(e: Event) {
+function handleClick(e: MouseEvent) {
   if (!props.isDisabled) {
     return emit('click', e);
   }
